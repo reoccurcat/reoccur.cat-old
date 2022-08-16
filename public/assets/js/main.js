@@ -136,11 +136,13 @@ function myFunction2() {
 
 function smth() {
     const x2 = document.getElementById("randImage");
-    const b2 = document.getElementsByClassName("socials")
+    const b2 = document.querySelectorAll(".socials")
     const l2 = document.getElementById("cat1");
     const l1 = document.getElementById("eng1");
     x2.setAttribute('hidden', '')
-    b2.setAttribute('hidden', '')
+    b2.forEach((element) => {
+        element.setAttribute('hidden', '');
+    });
     l2.setAttribute('hidden', '')
     l1.setAttribute('hidden', '')
 }
