@@ -134,7 +134,7 @@ function myFunction2() {
     h1.removeAttribute('hidden')
 }
 
-function uh() {
+function smth() {
     const x1 = document.getElementById("type1");
     const b1 = document.getElementById("myButton");
     const l1 = document.getElementById("eng1");
