@@ -135,20 +135,12 @@ function myFunction2() {
 }
 
 function smth() {
-    const x1 = document.getElementById("type1");
-    const b1 = document.getElementById("myButton");
-    const l1 = document.getElementById("eng1");
-    const h1 = document.getElementById("eng2");
-    const x2 = document.getElementById("type2");
-    const b2 = document.getElementById("myButton2")
+    const x2 = document.getElementById("randImage");
+    const b2 = document.getElementsByClassName("socials")
     const l2 = document.getElementById("cat1");
-    const h2 = document.getElementById("cat2");
+    const l1 = document.getElementById("eng1");
     x2.setAttribute('hidden', '')
     b2.setAttribute('hidden', '')
     l2.setAttribute('hidden', '')
-    h2.setAttribute('hidden', '')
-    x1.setAttribute('hidden', '')
-    b1.setAttribute('hidden', '')
     l1.setAttribute('hidden', '')
-    h1.setAttribute('hidden', '')
 }
