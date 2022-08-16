@@ -5,8 +5,8 @@ URLArray = [];
 URLArray[0] = 'https://madokamagicausa.com';
 URLArray[1] = 'https://genrandom.com/cats';
 
-const form = document.getElementById('form2');
-const input = document.getElementById('input2');
+const form = document.querySelector('form');
+const input = document.querySelector('input');
 
 const TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
