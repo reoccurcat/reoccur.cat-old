@@ -229,6 +229,11 @@ button {
     text-decoration: none;
     color: #FFF;
     font-size: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    height: 20px;
+    width: 100%;
 }
 
 .footer2 a {
