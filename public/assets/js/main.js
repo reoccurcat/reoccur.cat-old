@@ -5,6 +5,9 @@ URLArray = [];
 URLArray[0] = 'https://madokamagicausa.com';
 URLArray[1] = 'https://genrandom.com/cats';
 
+const form = document.querySelector('.form2');
+const input = document.querySelector('.input2');
+
 const TxtType = function (el, toRotate, period) {
     this.toRotate = toRotate;
     this.el = el;
@@ -135,18 +138,27 @@ function myFunction2() {
 }
 
 function smth() {
-    const x2 = document.getElementById("randImage");
-    const x1 = document.querySelectorAll(".socials")
-    const l2 = document.querySelectorAll(".typewriterthing")
-    const l1 = document.querySelectorAll(".bottomhalf");
+    const x2 = document.getElementById("maindiv");
+    const x1 = document.getElementById("uv")
     x2.setAttribute('hidden', '')
-    x1.forEach((element) => {
-        element.setAttribute('hidden', '');
+    x1.removeAttribute('hidden')
+}
+
+form.addEventListener('submit', async event => {
+    event.preventDefault();
+    window.navigator.serviceWorker.register('./sw.js', {
+        scope: __uv$config.prefix
+    }).then(() => {
+        let url = input.value.trim();
+        if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
+        else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
+
+
+        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
     });
-    l2.forEach((element) => {
-        element.setAttribute('hidden', '');
-    });
-    l1.forEach((element) => {
-        element.setAttribute('hidden', '');
-    });
+});
+
+function isUrl(val = ''){
+    return /^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ';
+
 }
