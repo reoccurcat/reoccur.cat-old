@@ -147,8 +147,8 @@ function uh() {
     b2.setAttribute('hidden', '')
     l2.setAttribute('hidden', '')
     h2.setAttribute('hidden', '')
-    x1.removeAttribute('hidden')
-    b1.removeAttribute('hidden')
-    l1.removeAttribute('hidden')
-    h1.removeAttribute('hidden')
+    x1.setAttribute('hidden', '')
+    b1.setAttribute('hidden', '')
+    l1.setAttribute('hidden', '')
+    h1.setAttribute('hidden', '')
 }
