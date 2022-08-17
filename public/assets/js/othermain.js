@@ -1,8 +1,6 @@
 const form = document.getElementById('form2');
 const input = document.getElementById('input2');
 
-console.log(form)
-
 form.addEventListener('submit', async event => {
     event.preventDefault();
     window.navigator.serviceWorker.register('./sw.js', {

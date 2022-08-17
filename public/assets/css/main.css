@@ -56,11 +56,12 @@ body {
    bottom: 10px;
    height: 20px;
    width: 100%;
+    font-size: 15px;
    color: white;
    background-color: rgba(0, 0, 0, 0);
 }
 
-.page {
+* {
     font-family: comfortaaRegular, serif
 }
 
@@ -172,10 +173,6 @@ button {
     }
 }
 
-* {
-    font-family: Roboto, serif;
-}
-
 .body2 {
     margin: 0;
     background: #111;
@@ -196,7 +193,7 @@ button {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .logo {
