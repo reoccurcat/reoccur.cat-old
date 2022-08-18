@@ -141,7 +141,9 @@ function smth() {
         const x1 = document.getElementById("uv")
         x2.setAttribute('hidden', '')
         x1.removeAttribute('hidden')
-    } else {
+    } else if (pw === "") {
         document.cookie = `ZmFpbGVkX2F1dGhlbnRpY2F0aW9u=dHJ1ZQ==`
+        copy.removeAttribute('hidden')
+        copy.setAttribute('hidden', '')
     }
 }
