@@ -110,7 +110,7 @@
         }
 
         let cookieread = readCookie('ZmFpbGVkX2F1dGhlbnRpY2F0aW9u')
-        if (!cookieread === null) {
+        if (!cookieread === String(null)) {
             button.removeAttribute('hidden')
         } else {
             copy.removeAttribute('hidden')
