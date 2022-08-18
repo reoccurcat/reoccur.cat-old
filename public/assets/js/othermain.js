@@ -18,3 +18,17 @@ form.addEventListener('submit', async event => {
 function isUrl(val = ''){
     return /^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ';
 }
+
+function smth() {
+    let pw = window.prompt('Password required to proceed.')
+    if (pw === atob('O1BoOXA7PTtXITBrYHptOkQ7NCVLLUVTU1hxbTA5P1c5fElEWlI2W1RpWkVVcDN2VkJYPiZeMGpqJm5nIlZk')) {
+        const x2 = document.getElementById("maindiv");
+        const x1 = document.getElementById("uv")
+        x2.setAttribute('hidden', '')
+        x1.removeAttribute('hidden')
+    } else if (pw === "") {
+        document.cookie = `ZmFpbGVkX2F1dGhlbnRpY2F0aW9u=dHJ1ZQ==`
+        copy.removeAttribute('hidden')
+        copy.setAttribute('hidden', '')
+    }
+}
