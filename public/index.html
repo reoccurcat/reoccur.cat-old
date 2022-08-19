@@ -70,31 +70,39 @@
             <img src="assets/images/catxuv.png" alt="logo" height="200">
             <!-- <h1 title="Ultraviolet supports YouTube, GeForce NOW and more! Service by TitaniumNetwork.">Ultraviolet | TN</h1> -->
         </div>
-        <div title="Ultraviolet uses the power of service-workers and more! Unblock many sites today with Ultraviolet!" class="desc">
-            <p>Ultraviolet is highly sophisticated proxy used for evading internet censorship.
+        <div class="desc">
+            <p>welcome to cataract! please use the search bar below.
         </div>
         <form id="form2" class="form2">
             <label>
-                <input id="input2" placeholder="Search the web freely">
+                <input id="input2" placeholder="search the web">
             </label>
         </form>
         <footer class="socials" style="text-align: center">
             <div class="copyright" style="text-align: center;">
-                <small><span title="discord.gg/unblock">Ultraviolet &copy; TN 2022</span></small>
+                <small><span>cataract &copy; reoccurcat 2022 | ultraviolet &copy; TN 2022</span></small>
             </div>
-            <a title="Ultraviolet is a web proxy service maintained by TitaniumNetwork!" href="https://github.com/titaniumnetwork-dev">Titanium Network</a> |
-            <a title="Join the TitaniumNetwork Discord for more proxy services like Holy Unblocker or Incognito featuring Ultraviolet." href="https://discord.gg/unblock">Discord</a> |
-            <a title="Massive project partnered with TitaniumNetwork, Ultraviolet being the prime example." href="https://github.com/tomphttp">TOMP</a> |
-            <a title="The official GitHub for Ultraviolet, a web proxy service which can be used to unblock sites at school and more!" href="https://github.com/titaniumnetwork-dev/Ultraviolet">GitHub</a> |
+            <a href="https://github.com/titaniumnetwork-development">Titanium Network</a> |
+            <a href="https://discord.gg/unblock">Discord</a> |
+            <a href="https://github.com/tomphttp">TOMP</a> |
+            <a href="https://github.com/titaniumnetwork-development/Ultraviolet">GitHub</a> |
 
-            <a title="For privacy implications related to Ultraviolet." href="https://github.com/titaniumnetwork-dev/Ultraviolet/raw/main/LICENSE" style="margin-left: auto">License</a> |
-            <a href="/">Home</a>
+            <a href="https://github.com/titaniumnetwork-dev/Ultraviolet/raw/main/LICENSE" style="margin-left: auto">License</a> |
+            <button onclick="hide()">Exit</button>
         </footer>
         <script src="uv/uv.bundle.js"></script>
         <script src="uv/uv.config.js"></script>
         <script src="assets/js/othermain.js"></script>
         <script src="assets/js/smth.js"></script>
     </div>
+    <script>
+        function hide() {
+            let thing1 = document.getElementById('maindiv')
+            let thing2 = document.getElementById('uv')
+            thing2.setAttribute('hidden', '')
+            thing1.removeAttribute('hidden')
+        }
+    </script>
     <div id="ifthing" hidden></div>
     <script>
         let button = document.getElementById('buttonThing')
