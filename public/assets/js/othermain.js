@@ -3,7 +3,7 @@ const input = document.getElementById('input2');
 
 function createFrame(url) {
     const thing = document.getElementById('uv');
-    const thing2 = document.getElementById('ifthing');
+    // const thing2 = document.getElementById('ifthing');
 
     var makeIframe = document.createElement("iframe");
     makeIframe.setAttribute("src", url);
@@ -25,9 +25,8 @@ function createFrame(url) {
 
     makediv.appendChild(makeIframe);
 
-    var getRef = document.getElementById("uv");
-    var parentDiv = getRef.parentNode;
-    parentDiv.insertBefore(makediv, getRef);
+    var parentDiv = thing.parentNode;
+    parentDiv.insertBefore(makediv, thing);
 }
 
 form.addEventListener('submit', async event => {
