@@ -27,7 +27,7 @@ function createFrame(url2) {
     thing2.appendChild(makeIframe);
     thing2.removeAttribute('hidden')
 
-    thing3.setAttribute('hidden', '')
+    // thing3.setAttribute('hidden', '')
 }
 
 form.addEventListener('submit', async event => {
