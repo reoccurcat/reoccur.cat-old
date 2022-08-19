@@ -1,6 +1,7 @@
 const form = document.getElementById('form2');
 const input = document.getElementById('input2');
 const thing = document.getElementById('uv');
+const thing2 = document.getElementById('ifthing');
 
 form.addEventListener('submit', async event => {
     event.preventDefault();
@@ -11,7 +12,11 @@ form.addEventListener('submit', async event => {
         if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
+        let makeIframe = document.createElement("iframe");
+        makeIframe.setAttribute("src", "https://google.com");
+
         thing.setAttribute('hidden', '')
+        thing2.appendChild(makeIframe)
 
         // window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
     });
