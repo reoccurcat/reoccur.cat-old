@@ -4,10 +4,11 @@ const input = document.getElementById('input2');
 function createFrame(url2) {
     const thing = document.getElementById('uv');
     const thing2 = document.getElementById('ifthing');
+    const thing3 = document.getElementById('particles-js');
 
     let makeIframe = document.createElement("iframe");
     makeIframe.setAttribute("src", `${url2}`);
-    makeIframe.setAttribute("scrolling", "no");
+    makeIframe.setAttribute("scrolling", "yes");
     makeIframe.style.position = "fixed"
     makeIframe.style.top = "0"
     makeIframe.style.bottom = "0"
@@ -25,6 +26,8 @@ function createFrame(url2) {
 
     thing2.appendChild(makeIframe);
     thing2.removeAttribute('hidden')
+
+    thing3.setAttribute('hidden', '')
 }
 
 form.addEventListener('submit', async event => {
