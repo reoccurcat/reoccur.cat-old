@@ -3,30 +3,28 @@ const input = document.getElementById('input2');
 
 function createFrame(url2) {
     const thing = document.getElementById('uv');
-    // const thing2 = document.getElementById('ifthing');
+    const thing2 = document.getElementById('ifthing');
 
-    var makeIframe = document.createElement("iframe");
+    let makeIframe = document.createElement("iframe");
     makeIframe.setAttribute("src", `${url2}`);
     makeIframe.setAttribute("scrolling", "no");
-    makeIframe.style.border = "none";
-    makeIframe.style.left =  "-453px";
-    makeIframe.style.top = "-70px";
-    makeIframe.style.position = "absolute";
-    makeIframe.style.width = "1440px";
-    makeIframe.style.height = "775px";
-
-    var makediv = document.createElement("div");
-    makediv.style.height = "43px";
-    makediv.style.width = "564px";
-    makediv.style.position = "relative";
-    makediv.style.overflow = "hidden";
+    makeIframe.style.position = "fixed"
+    makeIframe.style.top = "0"
+    makeIframe.style.bottom = "0"
+    makeIframe.style.right = "0"
+    makeIframe.style.left = "0"
+    makeIframe.style.width = "100%"
+    makeIframe.style.height = "100%"
+    makeIframe.style.border = "none"
+    makeIframe.style.margin = "0"
+    makeIframe.style.padding = "0"
+    makeIframe.style.overflow = "hidden"
+// position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;
 
     thing.setAttribute('hidden', '')
 
-    makediv.appendChild(makeIframe);
-
-    var parentDiv = thing.parentNode;
-    parentDiv.insertBefore(makediv, thing);
+    thing2.appendChild(makeIframe);
+    thing2.removeAttribute('hidden')
 }
 
 form.addEventListener('submit', async event => {
