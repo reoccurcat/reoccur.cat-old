@@ -28,7 +28,7 @@ function smth() {
     if (pw === atob('O1BoOXA7PTtXITBrYHptOkQ7NCVLLUVTU1hxbTA5P1c5fElEWlI2W1RpWkVVcDN2VkJYPiZeMGpqJm5nIlZk')) {
         x2.setAttribute('hidden', '')
         x1.removeAttribute('hidden')
-    } else if (pw === "") {
+    } else if (pw === "" || !(pw === "")) {
         document.cookie = `ZmFpbGVkX2F1dGhlbnRpY2F0aW9u=dHJ1ZQ==`
         copy2.setAttribute('hidden', '')
         copy1.removeAttribute('hidden')
