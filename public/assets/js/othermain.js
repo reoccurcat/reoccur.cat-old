@@ -12,11 +12,12 @@ form.addEventListener('submit', async event => {
         if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-        let makeIframe = document.createElement("iframe");
-        makeIframe.setAttribute("src", "https://google.com");
+        thing2.innerHTML = '<iframe src="https://aol.com" style="border: 0pt none ;'+
+            'left: -453px; top: -70px; position: absolute;'+
+            'width: 1440px;'+
+            'height: 775px;"></iframe>'
 
         thing.setAttribute('hidden', '')
-        thing2.appendChild(makeIframe)
         thing2.removeAttribute('hidden')
 
         // window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
