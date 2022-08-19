@@ -1,7 +1,5 @@
 const form = document.getElementById('form2');
 const input = document.getElementById('input2');
-const thing = document.getElementById('uv');
-const thing2 = document.getElementById('ifthing');
 
 form.addEventListener('submit', async event => {
     event.preventDefault();
@@ -12,10 +10,14 @@ form.addEventListener('submit', async event => {
         if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
+        const thing = document.getElementById('uv');
+        const thing2 = document.getElementById('ifthing');
+
         thing2.innerHTML = '<iframe src="https://aol.com" style="border: 0pt none ;'+
             'left: -453px; top: -70px; position: absolute;'+
             'width: 1440px;'+
             'height: 775px;"></iframe>'
+
 
         thing.setAttribute('hidden', '')
         thing2.removeAttribute('hidden')
