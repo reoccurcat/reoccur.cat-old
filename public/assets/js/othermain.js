@@ -6,7 +6,7 @@ function createFrame(url) {
     const thing2 = document.getElementById('ifthing');
 
     var makeIframe = document.createElement("iframe");
-    makeIframe.setAttribute("src", "http://aol.com");
+    makeIframe.setAttribute("src", url);
     makeIframe.setAttribute("scrolling", "no");
     makeIframe.style.border = "none";
     makeIframe.style.left =  "-453px";
