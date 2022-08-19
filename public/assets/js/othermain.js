@@ -13,14 +13,31 @@ form.addEventListener('submit', async event => {
         const thing = document.getElementById('uv');
         const thing2 = document.getElementById('ifthing');
 
-        thing2.innerHTML = '<iframe src="https://aol.com" style="border: 0pt none ;'+
-            'left: -453px; top: -70px; position: absolute;'+
-            'width: 1440px;'+
-            'height: 775px;"></iframe>'
+        var makeIframe = document.createElement("iframe");
+        makeIframe.setAttribute("src", "http://aol.com");
+        makeIframe.setAttribute("scrolling", "no");
+        makeIframe.style.border = "none";
+        makeIframe.style.left =  "-453px";
+        makeIframe.style.top = "-70px";
+        makeIframe.style.position = "absolute";
+        makeIframe.style.width = "1440px";
+        makeIframe.style.height = "775px";
 
+        var makediv = document.createElement("div");
+        makediv.style.height = "43px";
+        makediv.style.width = "564px";
+        makediv.style.position = "relative";
+        makediv.style.overflow = "hidden";
 
         thing.setAttribute('hidden', '')
-        thing2.removeAttribute('hidden')
+
+        makediv.appendChild(makeIframe);
+
+        var getRef = document.getElementById("uv");
+        var parentDiv = getRef.parentNode;
+        parentDiv.insertBefore(makediv, getRef);
+
+        //thing2.removeAttribute('hidden')
 
         // window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
     });
