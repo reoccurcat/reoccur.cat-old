@@ -1,12 +1,12 @@
 const form = document.getElementById('form2');
 const input = document.getElementById('input2');
 
-function createFrame(url) {
+function createFrame(url2) {
     const thing = document.getElementById('uv');
     // const thing2 = document.getElementById('ifthing');
 
     var makeIframe = document.createElement("iframe");
-    makeIframe.setAttribute("src", url);
+    makeIframe.setAttribute("src", `${url2}`);
     makeIframe.setAttribute("scrolling", "no");
     makeIframe.style.border = "none";
     makeIframe.style.left =  "-453px";
