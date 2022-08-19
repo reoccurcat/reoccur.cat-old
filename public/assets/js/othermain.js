@@ -17,6 +17,7 @@ form.addEventListener('submit', async event => {
 
         thing.setAttribute('hidden', '')
         thing2.appendChild(makeIframe)
+        thing2.removeAttribute('hidden')
 
         // window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
     });
