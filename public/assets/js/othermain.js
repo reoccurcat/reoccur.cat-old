@@ -1,6 +1,35 @@
 const form = document.getElementById('form2');
 const input = document.getElementById('input2');
 
+function createFrame(url) {
+    const thing = document.getElementById('uv');
+    const thing2 = document.getElementById('ifthing');
+
+    var makeIframe = document.createElement("iframe");
+    makeIframe.setAttribute("src", "http://aol.com");
+    makeIframe.setAttribute("scrolling", "no");
+    makeIframe.style.border = "none";
+    makeIframe.style.left =  "-453px";
+    makeIframe.style.top = "-70px";
+    makeIframe.style.position = "absolute";
+    makeIframe.style.width = "1440px";
+    makeIframe.style.height = "775px";
+
+    var makediv = document.createElement("div");
+    makediv.style.height = "43px";
+    makediv.style.width = "564px";
+    makediv.style.position = "relative";
+    makediv.style.overflow = "hidden";
+
+    thing.setAttribute('hidden', '')
+
+    makediv.appendChild(makeIframe);
+
+    var getRef = document.getElementById("uv");
+    var parentDiv = getRef.parentNode;
+    parentDiv.insertBefore(makediv, getRef);
+}
+
 form.addEventListener('submit', async event => {
     event.preventDefault();
     window.navigator.serviceWorker.register('./sw.js', {
@@ -10,36 +39,12 @@ form.addEventListener('submit', async event => {
         if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
         else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url;
 
-        const thing = document.getElementById('uv');
-        const thing2 = document.getElementById('ifthing');
-
-        var makeIframe = document.createElement("iframe");
-        makeIframe.setAttribute("src", "http://aol.com");
-        makeIframe.setAttribute("scrolling", "no");
-        makeIframe.style.border = "none";
-        makeIframe.style.left =  "-453px";
-        makeIframe.style.top = "-70px";
-        makeIframe.style.position = "absolute";
-        makeIframe.style.width = "1440px";
-        makeIframe.style.height = "775px";
-
-        var makediv = document.createElement("div");
-        makediv.style.height = "43px";
-        makediv.style.width = "564px";
-        makediv.style.position = "relative";
-        makediv.style.overflow = "hidden";
-
-        thing.setAttribute('hidden', '')
-
-        makediv.appendChild(makeIframe);
-
-        var getRef = document.getElementById("uv");
-        var parentDiv = getRef.parentNode;
-        parentDiv.insertBefore(makediv, getRef);
 
         //thing2.removeAttribute('hidden')
 
         // window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+        let urlthing = __uv$config.prefix + __uv$config.encodeUrl(url);
+        createFrame(urlthing)
     });
 });
 
