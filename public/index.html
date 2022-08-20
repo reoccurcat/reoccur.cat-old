@@ -114,7 +114,7 @@
                 return null
             }
             let txt = document.getElementById('loadingtext')
-            while (1===1) {
+            while ('hidden' in txt.attributes) {
                 setTimeout(changetxt(txt), 1000)
             }
         </script>
