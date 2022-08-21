@@ -103,6 +103,22 @@
             thing1.removeAttribute('hidden')
         }
     </script>
+    <div id="loading" hidden>
+        <span id="loadingtext">Loading the page.</span>
+        <span>Please be patient.</span>
+        <script>
+            function changetxt(txt) {
+                if ('...' in txt) {txt.innerHTML.replace('...', '.')}
+                else if ('..' in txt) {txt.innerHTML.replace('..', '...')}
+                else if ('.' in txt) {txt.innerHTML.replace('.', '..')}
+                return null
+            }
+            let txt = document.getElementById('loadingtext')
+            while ('hidden' in txt.attributes) {
+                setTimeout(changetxt(txt), 1000)
+            }
+        </script>
+    </div>
     <div id="ifthing" hidden></div>
     <script>
         let button = document.getElementById('buttonThing')

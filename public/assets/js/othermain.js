@@ -5,6 +5,7 @@ function createFrame(url2) {
     const thing = document.getElementById('uv');
     const thing2 = document.getElementById('ifthing');
     const thing3 = document.getElementById('particles-js');
+    const thing4 = document.getElementById('loading');
 
     let makeIframe = document.createElement("iframe");
     makeIframe.setAttribute("src", `${url2}`);
@@ -21,6 +22,9 @@ function createFrame(url2) {
     makeIframe.style.padding = "0"
     makeIframe.style.overflow = "hidden"
 // position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;
+
+    thing3.setAttribute('hidden', '')
+    thing4.removeAttribute('hidden')
 
     thing.setAttribute('hidden', '')
 
