@@ -2,7 +2,7 @@ import createServer from '@tomphttp/bare-server-node';
 import http from 'http';
 import nodeStatic from 'node-static';
 
-import config from './config.json';
+import * as config from './config.json';
 
 process.env.CLIENT_ID = config.GOOGLE_CLIENT_ID
 process.env.CLIENT_SECRET = config.GOOGLE_CLIENT_SECRET
