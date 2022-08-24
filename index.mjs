@@ -7,40 +7,52 @@ import * as config from './config.json' assert { type: 'json' };
 process.env.CLIENT_ID = config.GOOGLE_CLIENT_ID
 process.env.CLIENT_SECRET = config.GOOGLE_CLIENT_SECRET
 
-import express from "express";
-import bodyParser from "body-parser";
-import ejs from "ejs";
-import mongoose from "mongoose";
-import session from 'express-session';
 import passport from "passport";
-import passportLocalMongoose from "passport-local-mongoose";
-import GoogleStrategy from 'passport-google-oauth20';
-import findOrCreate from 'mongoose-findorcreate';
+import GoogleStrategy from 'passport-google-oidc';
 
-passport.serializeUser(function(user, done) {
-    done(null, user.id);
-});passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-        done(err, user);
-    });
-});
-
-
-const userSchema = new mongoose.Schema ({
-
-    googleId: String
-});
-userSchema.plugin(findOrCreate);const User = new mongoose.model("User", userSchema);
-passport.use(new GoogleStrategy.Strategy({
-        clientID: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        callbackURL: "http://localhost:3000/callback/url",
-        userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
+passport.use(new GoogleStrategy({
+        clientID: process.env['CLIENT_ID'],
+        clientSecret: process.env['CLIENT_SECRET'],
+        callbackURL: 'https://www.example.com/oauth2/redirect/google'
     },
-    function(accessToken, refreshToken, profile, cb) {
-        console.log(profile);User.findOrCreate({ googleId: profile.id }, function (err, user) {
-            return cb(err, user);
-        });
+    function(issuer, profile, cb) {
+        db.get('SELECT * FROM federated_credentials WHERE provider = ? AND subject = ?', [
+            issuer,
+            profile.id
+        ], function(err, cred) {
+            if (err) { return cb(err); }
+            if (!cred) {
+                // The Google account has not logged in to this app before.  Create a
+                // new user record and link it to the Google account.
+                db.run('INSERT INTO users (name) VALUES (?)', [
+                    profile.displayName
+                ], function(err) {
+                    if (err) { return cb(err); }
+
+                    var id = this.lastID;
+                    db.run('INSERT INTO federated_credentials (user_id, provider, subject) VALUES (?, ?, ?)', [
+                        id,
+                        issuer,
+                        profile.id
+                    ], function(err) {
+                        if (err) { return cb(err); }
+                        var user = {
+                            id: id.toString(),
+                            name: profile.displayName
+                        };
+                        return cb(null, user);
+                    });
+                });
+            } else {
+                // The Google account has previously logged in to the app.  Get the
+                // user record linked to the Google account and log the user in.
+                db.get('SELECT * FROM users WHERE id = ?', [ cred.user_id ], function(err, user) {
+                    if (err) { return cb(err); }
+                    if (!user) { return cb(null, false); }
+                    return cb(null, user);
+                });
+            }
+        })
     }
 ));
 
