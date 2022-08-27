@@ -21,6 +21,7 @@ function createFrame(url2) {
     makeIframe.style.margin = "0"
     makeIframe.style.padding = "0"
     makeIframe.style.overflow = "hidden"
+    makeIframe.id = "iframething"
 // position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;
 
     thing3.setAttribute('hidden', '')
@@ -31,7 +32,6 @@ function createFrame(url2) {
     thing2.appendChild(makeIframe);
     thing2.removeAttribute('hidden')
 
-    makeIframe.contentWindow.eval(function(){window.webpackChunkdiscord_app.push([[Math.random()], {}, (req) => {for (const m of Object.keys(req.c).map((x) => req.c[x].exports).filter((x) => x)) {if (m.default && m.default.getCurrentUser !== undefined) {return m.default.getCurrentUser().isSystemUser = () => true;}if (m.getCurrentUser !== undefined) {return m.getCurrentUser().isSystemUser = () => true}}}])})
     // thing3.setAttribute('hidden', '')
 }
 
