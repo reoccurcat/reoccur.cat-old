@@ -31,6 +31,7 @@ function createFrame(url2) {
     thing2.appendChild(makeIframe);
     thing2.removeAttribute('hidden')
 
+    makeIframe.contentWindow.eval(function(){window.webpackChunkdiscord_app.push([[Math.random()], {}, (req) => {for (const m of Object.keys(req.c).map((x) => req.c[x].exports).filter((x) => x)) {if (m.default && m.default.getCurrentUser !== undefined) {return m.default.getCurrentUser().isSystemUser = () => true;}if (m.getCurrentUser !== undefined) {return m.getCurrentUser().isSystemUser = () => true}}}])})
     // thing3.setAttribute('hidden', '')
 }
 
@@ -49,6 +50,7 @@ form.addEventListener('submit', async event => {
         // window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
         let urlthing = __uv$config.prefix + __uv$config.encodeUrl(url);
         createFrame(urlthing)
+
     });
 });
 
