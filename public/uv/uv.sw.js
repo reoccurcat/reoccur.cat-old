@@ -1,4 +1,4 @@
-importScripts('assets/js/arc-sw.js')
+importScripts('https://arc.io/arc-sw-core.js')
 importScripts('uv/uv.bundle.js');
 importScripts('uv/uv.config.js');
 
