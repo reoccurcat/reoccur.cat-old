@@ -21,6 +21,7 @@ function createFrame(url2) {
     makeIframe.style.margin = "0"
     makeIframe.style.padding = "0"
     makeIframe.style.overflow = "hidden"
+    makeIframe.id = "iframething"
 // position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;
 
     thing3.setAttribute('hidden', '')
@@ -49,6 +50,7 @@ form.addEventListener('submit', async event => {
         // window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
         let urlthing = __uv$config.prefix + __uv$config.encodeUrl(url);
         createFrame(urlthing)
+
     });
 });
 
