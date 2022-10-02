@@ -54,17 +54,17 @@ function checkRedirect() {
     console.log(`a surprise is locked behind a number.\nthe number is however not this number.\nthe number for this visit is ${num}.`)
 }
 
-function getRandomImage() {
-    const num = Math.floor(Math.random() * 2);
-    // noinspection JSUnusedAssignment
-    let img = ImageArray[num];
-    // noinspection JSUnusedAssignment
-    let url = URLArray[num];
-    // Forcing cat image for the time being
-    img = "circleavatar.png"
-    url = "https://genrandom.com/cats"
-    document.getElementById("randImage").innerHTML = (`<a href="${url}"> <img src="assets/images/${img}" width=250px height=250px alt=""> </a>`)
-}
+//function getRandomImage() {
+//    const num = Math.floor(Math.random() * 2);
+//    // noinspection JSUnusedAssignment
+//    let img = ImageArray[num];
+//    // noinspection JSUnusedAssignment
+//    let url = URLArray[num];
+//    // Forcing cat image for the time being
+//    img = "circleavatar.png"
+//    url = "https://genrandom.com/cats"
+//    document.getElementById("randImage").innerHTML = (`<a href="${url}"> <img src="assets/images/${img}" width=250px height=250px alt=""> </a>`)
+//}
 
 function typeWriter() {
     const elements = document.getElementsByClassName('typewrite');
@@ -133,3 +133,21 @@ function myFunction2() {
     l1.removeAttribute('hidden')
     h1.removeAttribute('hidden')
 }
+
+fetch('https://api.lanyard.rest/v1/users/834894431861473340').then(function(response) {
+    return response.json();
+}).then(function(data) {
+    try {
+        let docthing = document.getElementById('div1text')
+        docthing.innerText = data['data']['spotify']['song']
+        docthing = document.getElementById('albumartimage')
+        docthing.outerHTML = `<img alt="logo" src="${data['data']['spotify']['album_art_url']}" id="albumartimage" width="200" height="200">`
+        docthing = document.getElementById('artistname')
+        docthing.innerText = data['data']['spotify']['artist']
+        docthing.removeAttribute('hidden')
+    } catch {
+        let docthing = document.getElementById('div1text')
+        docthing.innerText = 'spotify isn\'t playing music rn'
+    }
+})
+

@@ -2,6 +2,7 @@
 <html class="page" lang="en">
 <head>
     <title>reoccurcat</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta content="reoccurcat" property="og:title" />
     <meta content="page: main" property="og:description" />
     <meta content="https://reoccur.cat" property="og:url" />
@@ -18,32 +19,89 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
+    <!-- title changing thing that doesn't like being put into a js file -->
+    <script>
+        let i=0;
+        let f=0
+        setInterval(function(){
+            if (f===0) {
+                let titles = ['reoccurcat_', 'reoccurcat_', 'reoccurcat', 'reoccurcat', 'reoccurcat_', 'reoccurcat_', 'reoccurcat', 'reoccurcat',
+                    'reoccurcat_', 'reoccurcat_', 'reoccurcat',
+                    'reoccurcat', 'reoccurcat_', 'reoccurcat_', 'reoccurcat', 'reoccurcat'];
+                document.title = titles[i];
+                i++
+                if (i >= titles.length) {i = 0; f = 1}
+            }
+            else if (f===1) {
+                let titles=['reoccurca_', 'reoccurc_', 'reoccur_', 'reoccu_', 'reocc_',
+                    'reoc_', 'reo_', 're_', 'r_', '_'];
+                document.title = titles[i];
+                i++;
+                if (i >= titles.length) {i=0; f=2}
+            }
+            else if (f===2) {
+                let titles=['\u200E', '\u200E', '_', '_', '\u200E', '\u200E',
+                    '_', '_', '\u200E',
+                    '\u200E', '_', '_', '\u200E', '\u200E', '_', '_'];
+                document.title = titles[i];
+                i++;
+                if (i >= titles.length) {i=0; f=3}
+            }
+            //ฅ^•ﻌ•^ฅ
+            else if (f===3) {
+                let titles=['_', 'ฅ_', 'ฅ^_', 'ฅ^•_', 'ฅ^•ﻌ_', 'ฅ^•ﻌ•_',
+                    'ฅ^•ﻌ•^_', 'ฅ^•ﻌ•^ฅ_', 'ฅ^•ﻌ•^ฅ _', 'ฅ^•ﻌ•^ฅ 💜_'];
+                document.title = titles[i];
+                i++;
+                if (i >= titles.length) {i=0; f=4}
+            }
+            else if (f===4) {
+                let titles=['ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ 💜', 'ฅ^•ﻌ•^ฅ 💜',
+                    'ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ 💜', 'ฅ^•ﻌ•^ฅ 💜',
+                    'ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ 💜',
+                    'ฅ^•ﻌ•^ฅ 💜', 'ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ 💜', 'ฅ^•ﻌ•^ฅ 💜'];
+                document.title = titles[i];
+                i++;
+                if (i >= titles.length) {i=0; f=5}
+            }
+            else if (f===5) {
+                let titles=['ฅ^•ﻌ•^ฅ 💜_', 'ฅ^•ﻌ•^ฅ _', 'ฅ^•ﻌ•^ฅ_', 'ฅ^•ﻌ•^_', 'ฅ^•ﻌ•_',
+                    'ฅ^•ﻌ_', 'ฅ^•_', 'ฅ^_', 'ฅ_', '_'];
+                document.title = titles[i];
+                i++;
+                if (i >= titles.length) {i=0; f=6}
+            }
+            else if (f===6) {
+                let titles=['\u200E', '\u200E', '_', '_', '\u200E', '\u200E',
+                    '_', '_', '\u200E',
+                    '\u200E', '_', '_', '\u200E', '\u200E', '_', '_'];
+                document.title = titles[i];
+                i++;
+                if (i >= titles.length) {i=0; f=7}
+            }
+            else if (f===7) {
+                let titles=['r_', 're_', 'reo_', 'reoc_', 'reocc_',
+                    'reoccu_', 'reoccur_', 'reoccurc_', 'reoccurca_', 'reoccurcat_'];
+                document.title = titles[i];
+                i++
+                if (i >= titles.length) {i=0; f=0}
+            }
+        }, 200);
+    </script>
 </head>
 
-<body onload="checkRedirect(); getRandomImage(); typeWriter(); typeWriter2()">
-    <!-- particles.js container -->
-    <div id="particles-js"></div>
-
-    <!-- scripts -->
-    <script src="assets/js/particles.js"></script>
-    <script src="assets/js/app.js"></script>
+<body>
     <div id="maindiv">
-        <div class="floating" id="randImage" style=
-                "height: 250px; width: 250px;
-                background: rgba(128, 0, 128, 0);
-                padding: 5px">
+        <div>
+            <div class="menu1"></div>
+            <div class="menu2"></div>
+            <div class="menu3"></div>
         </div>
-        <div class="typewriterthing">
-            <div id='type1' class="header1">
-                <a class="typewrite" data-period="5000" data-type='[ "Hi, I&#39m reoccurcat.", "I&#39m a fourteen year old developer.", "I can code in many languages, including JS and Python.", "Click here to learn more about me." ]'>
-                    <div style="text-align: center;"><h3 class="wrap"></h3></div>
-                </a>
-            </div>
-            <div hidden id='type2' class="header2">
-                <a class="typewrite2" data-period="5000" data-type='[ "Hola, estic reoccurcat.", "S&#243c un desenvolupador de catorze anys.", "Puc codificar en molts idiomes, inclosos JS i Python.", "Feu clic aqu&#237 per obtenir m&#233s informaci&#243 sobre mi." ]'>
-                    <div style="text-align: center;"><h3 class="wrap"></h3></div>
-                </a>
-            </div>
+        <img src="assets/images/logothing.png" class="logothing" alt="small logo" width="130px" height="30px">
+        <div class="roundeddiv">
+            <img alt="logo" src="assets/images/circleavatar.png" id="albumartimage">
+            <span id="div1text">loading...</span>
+            <span id="artistname" hidden></span>
         </div>
         <div class="bottomhalf">
             <div class="copyright" style="text-align: center;">

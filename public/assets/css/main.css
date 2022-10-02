@@ -1,6 +1,10 @@
 @import url('https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @font-face {
    font-family: "comfortaaRegular";
    src: url("../fonts/comfortaa/Comfortaa-Regular.ttf");
@@ -82,7 +86,97 @@ body {
     top: 0;
     left: 0
 }
- 
+
+.menu1 {
+    width: 30px;
+    height: 5px;
+    background-color: dimgrey;
+    margin: 6px 0;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    visibility: hidden;
+}
+
+.smalllogo {
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.roundeddiv {
+    border-radius: 25px;
+    margin: auto;
+    width: 20%;
+    padding: 15px;
+    top: 50px;
+    position: fixed;
+    border: 2px solid #1DB954;
+    color: white;
+    animation: fadeIn ease 2s, floating;
+    height: 325px;
+    text-align: center;
+}
+
+.actualdiv {
+    padding: 3rem;
+    background-color: black;
+}
+
+#div1text {
+    position: absolute;
+    top: 245px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+}
+
+#artistname {
+    position: absolute;
+    top: 280px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+}
+
+#albumartimage {
+    position: relative;
+    top: 10px;
+    border-radius: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu2 {
+    width: 30px;
+    height: 5px;
+    background-color: dimgrey;
+    margin: 6px 0;
+    position: fixed;
+    top: 15px;
+    left: 10px;
+    visibility: hidden;
+}
+
+.menu3 {
+    width: 30px;
+    height: 5px;
+    background-color: dimgrey;
+    margin: 6px 0;
+    position: fixed;
+    top: 25px;
+    left: 10px;
+    visibility: hidden;
+}
+
+.typewriterthing {
+    animation: fadeIn ease 2s, floating;
+}
+
  @keyframes fadeIn{
    0% {
      opacity:0;
