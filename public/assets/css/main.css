@@ -116,9 +116,39 @@ body {
     position: fixed;
     border: 2px solid #1DB954;
     color: white;
-    animation: fadeIn ease 2s, floating;
+    animation: fadeIn ease 2s;
     height: 325px;
     text-align: center;
+    left: 25%;
+}
+
+.roundeddiv-m {
+    border-radius: 25px;
+    margin: auto;
+    width: 20%;
+    padding: 15px;
+    top: 50px;
+    position: fixed;
+    border: 2px solid #1DB954;
+    color: white;
+    animation: fadeIn ease 2s;
+    height: 325px;
+    text-align: center;
+}
+
+.roundeddiv2 {
+    border-radius: 25px;
+    margin: auto;
+    width: 20%;
+    padding: 15px;
+    top: 50px;
+    position: fixed;
+    border: 2px solid grey;
+    color: white;
+    animation: fadeIn ease 2s;
+    height: 325px;
+    text-align: center;
+    right: 25%;
 }
 
 .actualdiv {
@@ -136,10 +166,18 @@ body {
 
 #artistname {
     position: absolute;
-    top: 280px;
+    top: 300px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 12px;
+}
+
+#status {
+    position: absolute;
+    top: 285px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
 }
 
 #albumartimage {
@@ -149,6 +187,23 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+#loadimgdsc {
+    position: relative;
+    top: 10px;
+    border-radius: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#disload {
+    position: absolute;
+    top: 245px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
 }
 
 .menu2 {
@@ -234,6 +289,16 @@ body {
   color: transparent;
   animation: rainbow_animation 6s ease-in-out infinite;
   background-size: 400% 100%;
+}
+
+.rainbow_text_animated2 {
+    background: linear-gradient(to right, #6666ff, #0066ff, #00ffff, #33ff99, #6666ff);
+    -webkit-background-clip: text;
+    /*noinspection CssInvalidPropertyValue*/
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 6s ease-in-out infinite;
+    background-size: 400% 100%;
 }
 
 @keyframes rainbow_animation {
@@ -369,4 +434,92 @@ button {
     animation: fadeInAnimation ease-in-out 0.3s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
+}
+
+@keyframes color-change-online-txt {
+    0%,100%{
+        color: #2bd977;
+    }
+
+    50%{
+        color: #444444;
+    }
+
+}
+
+@keyframes color-change-idle-txt {
+    0%,100%{
+        color:#FFD700;
+    }
+
+    50%{
+        color: #444444;
+    }
+
+}
+
+@keyframes color-change-dnd-txt{
+    0%,100%{
+        color: #DC143C;
+    }
+
+    50%{
+        color: #444444;
+    }
+
+}
+
+@keyframes color-change-invisible-txt {
+    0%,100%{
+        color: #a6a6a6;
+    }
+
+    50%{
+        color: #444444;
+    }
+
+}
+
+@keyframes color-change-online {
+    0%,100%{
+        border-color: #2bd977;
+    }
+
+    50%{
+        border-color: #444444;
+    }
+
+}
+
+@keyframes color-change-idle {
+    0%,100%{
+        border-color:#FFD700;
+    }
+
+    50%{
+        border-color: #444444;
+    }
+
+}
+
+@keyframes color-change-dnd {
+    0%,100%{
+        border-color: #DC143C;
+    }
+
+    50%{
+        border-color: #444444;
+    }
+
+}
+
+@keyframes color-change-invisible {
+    0%,100%{
+        border-color: #a6a6a6;
+    }
+
+    50%{
+        border-color: #444444;
+    }
+
 }
