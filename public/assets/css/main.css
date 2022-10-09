@@ -57,10 +57,10 @@ body {
 .socials {
    position: fixed;
    left: 0;
-   bottom: 10px;
+   bottom: 8px;
    height: 20px;
    width: 100%;
-    font-size: 15px;
+    font-size: 1.75vh;
    color: white;
    background-color: rgba(0, 0, 0, 0);
 }
@@ -112,7 +112,7 @@ body {
     margin: auto;
     width: 20%;
     padding: 15px;
-    top: 50px;
+    top: 15%;
     position: fixed;
     border: 2px solid #1DB954;
     color: white;
@@ -141,7 +141,7 @@ body {
     margin: auto;
     width: 20%;
     padding: 15px;
-    top: 50px;
+    top: 15%;
     position: fixed;
     border: 2px solid grey;
     color: white;
