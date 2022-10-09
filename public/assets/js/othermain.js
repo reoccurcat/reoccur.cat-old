@@ -46,6 +46,7 @@ form.addEventListener('submit', async event => {
 
         // window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
         let urlthing = __uv$config.prefix + __uv$config.encodeUrl(url);
+        console.log(urlthing)
         createFrame(urlthing)
     });
 });
