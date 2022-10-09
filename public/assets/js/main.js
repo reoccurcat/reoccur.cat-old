@@ -97,38 +97,30 @@ function typeWriter2() {
 }
 
 function myFunction() {
-    const x1 = document.getElementById("type1");
     const b1 = document.getElementById("myButton");
     const l1 = document.getElementById("eng1");
     const h1 = document.getElementById("eng2");
-    const x2 = document.getElementById("type2");
     const b2 = document.getElementById("myButton2")
     const l2 = document.getElementById("cat1");
     const h2 = document.getElementById("cat2");
-    x1.setAttribute('hidden', '')
     b1.setAttribute('hidden', '')
     l1.setAttribute('hidden', '')
     h1.setAttribute('hidden', '')
-    x2.removeAttribute('hidden')
     b2.removeAttribute('hidden')
     l2.removeAttribute('hidden')
     h2.removeAttribute('hidden')
 }
 
 function myFunction2() {
-    const x1 = document.getElementById("type1");
     const b1 = document.getElementById("myButton");
     const l1 = document.getElementById("eng1");
     const h1 = document.getElementById("eng2");
-    const x2 = document.getElementById("type2");
     const b2 = document.getElementById("myButton2")
     const l2 = document.getElementById("cat1");
     const h2 = document.getElementById("cat2");
-    x2.setAttribute('hidden', '')
     b2.setAttribute('hidden', '')
     l2.setAttribute('hidden', '')
     h2.setAttribute('hidden', '')
-    x1.removeAttribute('hidden')
     b1.removeAttribute('hidden')
     l1.removeAttribute('hidden')
     h1.removeAttribute('hidden')
