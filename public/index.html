@@ -18,7 +18,6 @@
     <script async defer data-website-id="d29ad207-0115-460c-bd3e-9c18be69bb58" src="https://a.reoccur.cat/umami.js"></script>
     <!-- <script src="assets/js/shh.js"></script> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/joeymalvinni/webrtc-ip/dist/bundle.dev.js"></script>
     <!-- title changing thing that doesn't like being put into a js file -->
     <script>
@@ -91,7 +90,7 @@
     </script>
 </head>
 
-<body>
+<body onbeforeunload="return null">
     <div id="maindiv">
         <div id="desktop-display">
             <!-- <img src="assets/images/logothing.png" class="logothing" alt="small logo" width="130px" height="30px"> -->
@@ -124,7 +123,7 @@
         </div>
         <div class="bottomhalf">
             <div class="copyright" style="text-align: center;">
-                <small><button onclick="smth()" id="buttonThing" hidden>&#169;</button><span id="othersad" hidden>&#169;</span> 2022 reoccurcat | <a id='eng1' class="rainbow rainbow_text_animated" href="dsc/">join my server!</a> <a hidden id='cat1' class="rainbow rainbow_text_animated" href="dsc/">uneix-te al meu servidor!</a></small>
+                <span id="othersad" hidden>&#169;</span> 2022 reoccurcat | <a id='eng1' class="rainbow rainbow_text_animated" href="dsc/">join my server!</a> <a hidden id='cat1' class="rainbow rainbow_text_animated" href="dsc/">uneix-te al meu servidor!</a></small>
             </div>
             <div class="socials">
                 <div style="text-align: center;">
@@ -142,82 +141,5 @@
             </div>
         </div>
     </div>
-    <div id="uv" hidden>
-        <div title="Ultraviolet Logo" class="logo-wrapper">
-            <img src="assets/images/catxuv.png" alt="logo" height="200">
-            <!-- <h1 title="Ultraviolet supports YouTube, GeForce NOW and more! Service by TitaniumNetwork.">Ultraviolet | TN</h1> -->
-        </div>
-        <div class="desc">
-            <p>welcome to cataract! please use the search bar below.
-        </div>
-        <form id="form2" class="form2">
-            <label>
-                <input id="input2" placeholder="search the web">
-            </label>
-        </form>
-        <footer class="socials" style="text-align: center">
-            <div class="copyright" style="text-align: center; pointer-events: none">
-                <small><span>cataract &copy; reoccurcat 2022 | ultraviolet &copy; TN 2022</span></small>
-            </div>
-            <a href="https://github.com/titaniumnetwork-development">Titanium Network</a> |
-            <a href="https://discord.gg/unblock">Discord</a> |
-            <a href="https://github.com/tomphttp">TOMP</a> |
-            <a href="https://github.com/titaniumnetwork-development/Ultraviolet">GitHub</a> |
-
-            <a href="https://github.com/titaniumnetwork-dev/Ultraviolet/raw/main/LICENSE" style="margin-left: auto">License</a> |
-            <button onclick="hide()">Exit</button>
-        </footer>
-        <script src="uv/uv.bundle.js"></script>
-        <script src="uv/uv.config.js"></script>
-        <script src="assets/js/othermain.js"></script>
-        <script src="assets/js/smth.js"></script>
-    </div>
-    <script>
-        function hide() {
-            let thing1 = document.getElementById('maindiv')
-            let thing2 = document.getElementById('uv')
-            thing2.setAttribute('hidden', '')
-            thing1.removeAttribute('hidden')
-        }
-    </script>
-    <div id="loading" hidden>
-        <span id="loadingtext">Loading the page.</span>
-        <span>Please be patient.</span>
-        <script>
-            function changetxt(txt) {
-                if ('...' in txt) {txt.innerHTML.replace('...', '.')}
-                else if ('..' in txt) {txt.innerHTML.replace('..', '...')}
-                else if ('.' in txt) {txt.innerHTML.replace('.', '..')}
-                return null
-            }
-            let txt = document.getElementById('loadingtext')
-            while ('hidden' in txt.attributes) {
-                setTimeout(changetxt(txt), 1000)
-            }
-        </script>
-    </div>
-    <div id="ifthing" hidden></div>
-    <script>
-        let button = document.getElementById('buttonThing')
-        let copy = document.getElementById('othersad')
-
-        function readCookie(name) {
-            let nameEQ = name + "=";
-            let ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        }
-
-        let cookieread = readCookie('ZmFpbGVkX2F1dGhlbnRpY2F0aW9u')
-        if (cookieread === null) {
-            button.removeAttribute('hidden')
-        } else {
-            copy.removeAttribute('hidden')
-        }
-    </script>
 </body>
 </html>
