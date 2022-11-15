@@ -90,7 +90,12 @@
     </script>
 </head>
 
-<body onbeforeunload="return null">
+<body onbeforeunload="return test()">
+    <script>
+        function test() {
+            return "Idk what to put here"
+        }
+    </script>
     <div id="maindiv">
         <div id="desktop-display">
             <!-- <img src="assets/images/logothing.png" class="logothing" alt="small logo" width="130px" height="30px"> -->
