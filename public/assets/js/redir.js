@@ -8,5 +8,5 @@ function countDown() {
 }
 
 function changeCount() {
-    setInterval(function () { if (num === 0) {window.location.replace("https://discord.gg/rTC5N8XCQR")} else {countDown(num)} }, 1000)
+    setInterval(function () { if (num === 0) {window.location.replace("https://discord.gg/BfpRSNYxAB")} else {countDown(num)} }, 1000)
 }
