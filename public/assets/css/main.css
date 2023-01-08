@@ -51,7 +51,7 @@ body {
    width: 100%;
    color: white;
    background-color: rgba(0, 0, 0, 0);
-    font-size: 0.9vw;
+    font-size: 1.5vmin;
     padding-bottom: 5px;
 }
 
@@ -61,7 +61,7 @@ body {
    bottom: 8px;
    height: 20px;
    width: 100%;
-    font-size: 0.75vw;
+    font-size: 1.5vmin;
    color: white;
    background-color: rgba(0, 0, 0, 0);
     padding-bottom: 5px;
