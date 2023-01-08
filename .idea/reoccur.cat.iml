@@ -11,5 +11,8 @@
     <orderEntry type="library" name="crypto-js" level="application" />
     <orderEntry type="library" name="jquery" level="application" />
     <orderEntry type="library" name="bundle.dev" level="application" />
+    <orderEntry type="library" name="jquery" level="application" />
+    <orderEntry type="library" name="kittens" level="application" />
+    <orderEntry type="library" name="bundle.dev" level="application" />
   </component>
 </module>
