@@ -154,7 +154,8 @@ body {
     margin: auto;
     width: 30vw;
     top: 60%;
-    position: fixed;
+    display: inline-block;
+    position: absolute;
     border: 2px solid blueviolet;
     color: white;
     animation: fadeIn ease 2s;
