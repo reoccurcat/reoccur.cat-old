@@ -1,10 +1,6 @@
 @import url('https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @font-face {
    font-family: "comfortaaRegular";
    src: url("../fonts/comfortaa/Comfortaa-Regular.ttf");
@@ -157,7 +153,7 @@ body {
     border-radius: 25px;
     margin: auto;
     width: 30vw;
-    top: 54vh;
+    top: 25%;
     position: fixed;
     border: 2px solid blueviolet;
     color: white;
