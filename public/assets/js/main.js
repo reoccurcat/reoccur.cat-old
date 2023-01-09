@@ -126,39 +126,56 @@ function myFunction2() {
     h1.removeAttribute('hidden')
 }
 
-window.onload = async function () {
-    console.log('run')
-    fetch('https://api.lanyard.rest/v1/users/834894431861473340').then(function(response) {
-        return response.json();
-    }).then(function(data) {
-        try {
-            let docthing = document.getElementById('div1text')
-            docthing.innerText = data['data']['spotify']['song']
-            docthing = document.getElementById('albumartimage')
-            docthing.outerHTML = `<img alt="logo" src="${data['data']['spotify']['album_art_url']}" id="albumartimage" width="200" height="200">`
-            docthing = document.getElementById('artistname')
-            docthing.innerText = data['data']['spotify']['artist']
-            docthing.removeAttribute('hidden')
-            let borderthing = document.getElementById('rounddiv')
-            borderthing.classList.add('spotplaying')
-        } catch {
-            let docthing = document.getElementById('div1text')
-            docthing.innerText = 'spotify isn\'t playing music rn'
-        }
-        docthing = document.getElementById('loadimgdsc')
-        docthing.outerHTML = `<img alt="logo" src="https://cdn.discordapp.com/avatars/834894431861473340/${data['data']['discord_user']['avatar']}" id="loadimgdsc" width="200" height="200">`
-        docthing = document.getElementById('disload')
-        docthing.innerHTML = `${data['data']['discord_user']['username']}#${data['data']['discord_user']['discriminator']}`
-        docthing.setAttribute('class', 'rainbow rainbow_text_animated2')
-        docthing = document.getElementById('rounddiv2')
-        docthing2 = document.getElementById('statusthing')
-        docthing2.outerHTML = `<span id="statusthing">reoccurcat is currently </span><span id='flashtext'>${data['data']['discord_status']}</span>`
-        docthing2 = document.getElementById('flashtext')
-        if (data['data']['discord_status'] === 'online') {docthing.setAttribute('style', 'animation: color-change-online 4s linear infinite;'); docthing2.setAttribute('style', 'animation: color-change-online-txt 4s linear infinite;')}
-        else if (data['data']['discord_status'] === 'idle') {docthing.setAttribute('style', 'animation: color-change-idle 4s linear infinite;'); docthing2.setAttribute('style', 'animation: color-change-idle-txt 4s linear infinite;')}
-        else if (data['data']['discord_status'] === 'dnd') {docthing.setAttribute('style', 'animation: color-change-dnd 4s linear infinite;'); docthing2.setAttribute('style', 'animation: color-change-dnd-txt 4s linear infinite;')}
-        else if (data['data']['discord_status'] === 'offline') {docthing.setAttribute('style', 'animation: color-change-invisible 4s linear infinite;'); docthing2.setAttribute('style', 'animation: color-change-invisible-txt 4s linear infinite;')}
-        docthing2 = document.getElementById('status')
-        docthing2.removeAttribute('hidden')
-    })
+//var songsec
+let status = ''
+
+window.onload = async function discorddata() {
+        fetch('https://api.lanyard.rest/v1/users/834894431861473340').then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            try {
+                let docthing = document.getElementById('div1text')
+                docthing.innerText = data['data']['spotify']['song']
+                docthing = document.getElementById('albumartimage')
+                docthing.outerHTML = `<img alt="logo" src="${data['data']['spotify']['album_art_url']}" id="albumartimage" width="200" height="200">`
+                docthing = document.getElementById('artistname')
+                docthing.innerText = data['data']['spotify']['artist']
+                docthing.removeAttribute('hidden')
+                let borderthing = document.getElementById('rounddiv')
+                borderthing.classList.add('spotplaying')
+                let timestamps = data['data']['spotify']['timestamps']
+                //songsec = Math.ceil((timestamps['end']-timestamps['start'])/1000)*1000
+            } catch {
+                let docthing = document.getElementById('div1text')
+                docthing.innerText = 'spotify isn\'t playing music rn'
+                docthing = document.getElementById('albumartimage')
+                docthing.outerHTML = '<img alt="logo" src="assets/images/circleavatar.png" id="albumartimage">'
+                docthing = document.getElementById('artistname')
+                docthing.setAttribute('hidden', '')
+                //songsec = 60000
+            }
+            docthing = document.getElementById('loadimgdsc')
+            docthing.outerHTML = `<img alt="logo" src="https://cdn.discordapp.com/avatars/834894431861473340/${data['data']['discord_user']['avatar']}" id="loadimgdsc" width="200" height="200">`
+            docthing = document.getElementById('disload')
+            docthing.innerHTML = `${data['data']['discord_user']['username']}#${data['data']['discord_user']['discriminator']}`
+            docthing.setAttribute('class', 'rainbow rainbow_text_animated2')
+            docthing = document.getElementById('rounddiv2')
+            docthing2 = document.getElementById('statusthing')
+            if (status == '') {
+                status = data['data']['discord_status']
+                docthing2.outerHTML = `<span id="statusthing">reoccurcat is currently </span><span id='flashtext'>${data['data']['discord_status']}</span>`
+            } else if (status != data['data']['discord_status']) {
+                status = data['data']['discord_status']
+                docthing3 = document.getElementById('flashtext')
+                flashtext.innerText = data['data']['discord_status']
+            }
+            docthing2 = document.getElementById('flashtext')
+            if (data['data']['discord_status'] === 'online') {docthing.setAttribute('style', 'animation: color-change-online 4s linear infinite;'); docthing2.setAttribute('style', 'animation: color-change-online-txt 4s linear infinite;')}
+            else if (data['data']['discord_status'] === 'idle') {docthing.setAttribute('style', 'animation: color-change-idle 4s linear infinite;'); docthing2.setAttribute('style', 'animation: color-change-idle-txt 4s linear infinite;')}
+            else if (data['data']['discord_status'] === 'dnd') {docthing.setAttribute('style', 'animation: color-change-dnd 4s linear infinite;'); docthing2.setAttribute('style', 'animation: color-change-dnd-txt 4s linear infinite;')}
+            else if (data['data']['discord_status'] === 'offline') {docthing.setAttribute('style', 'animation: color-change-invisible 4s linear infinite;'); docthing2.setAttribute('style', 'animation: color-change-invisible-txt 4s linear infinite;')}
+            docthing2 = document.getElementById('status')
+            docthing2.removeAttribute('hidden')
+        })
+        setTimeout(discorddata, 10000)
 }

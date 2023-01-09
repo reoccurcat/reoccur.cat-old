@@ -114,14 +114,14 @@ body {
     margin: auto;
     width: 20%;
     padding: 15px;
-    top: 15%;
+    top: 5%;
     position: fixed;
     border: 2px solid #1DB954;
     color: white;
     animation: fadeIn ease 2s;
     height: 325px;
     text-align: center;
-    left: 25%;
+    left: 25vw;
 }
 
 .roundeddiv-m {
@@ -143,14 +143,41 @@ body {
     margin: auto;
     width: 20%;
     padding: 15px;
-    top: 15%;
+    top: 5%;
     position: fixed;
     border: 2px solid grey;
     color: white;
     animation: fadeIn ease 2s;
     height: 325px;
     text-align: center;
-    right: 25%;
+    right: 25vw;
+}
+
+.roundeddiv3 {
+    border-radius: 25px;
+    margin: auto;
+    width: 30vw;
+    top: 54vh;
+    position: fixed;
+    border: 2px solid blueviolet;
+    color: white;
+    animation: fadeIn ease 2s;
+    height: 20vh;
+    text-align: center;
+    right: 35vw;
+}
+
+#countertext {
+    position: relative;
+    top: 1.5vh;
+}
+
+#moecounter {
+    position: absolute;
+    left: 50%;
+    top: 3vw;
+    transform: translateX(-50%);
+    font-size: 12px;
 }
 
 .actualdiv {
