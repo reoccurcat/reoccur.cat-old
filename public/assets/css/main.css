@@ -153,7 +153,7 @@ body {
     border-radius: 25px;
     margin: auto;
     width: 30vw;
-    bottom: 10%;
+    top: 80%;
     position: fixed;
     border: 2px solid blueviolet;
     color: white;
