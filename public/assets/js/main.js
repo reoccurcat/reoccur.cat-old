@@ -148,7 +148,7 @@ window.onload = async function () {
         docthing = document.getElementById('loadimgdsc')
         docthing.outerHTML = `<img alt="logo" src="https://cdn.discordapp.com/avatars/834894431861473340/${data['data']['discord_user']['avatar']}" id="loadimgdsc" width="200" height="200">`
         docthing = document.getElementById('disload')
-        docthing.innerHTML = `${data['data']['discord_user']['username']}#${data['data']['discord_user']['discriminator']}`
+        docthing.innerHTML = `${data['data']['discord_user']['username']}`
         docthing.setAttribute('class', 'rainbow rainbow_text_animated2')
         docthing = document.getElementById('rounddiv2')
         docthing2 = document.getElementById('statusthing')
